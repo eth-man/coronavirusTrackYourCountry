@@ -5,10 +5,18 @@ import requests
 import time
 import argparse
 
-country = "UK"
 data_check= []
 worldmetersLink = "https://www.worldometers.info/coronavirus/"
 
+parser = argparse.ArgumentParser(
+    description='Example with nonoptional arguments',
+)
+
+parser.add_argument('country', action="store", type=str)
+parser.add_argument('label', action="store")
+
+args=parser.parse_args()
+country=args.country
 def data_cleanup(array):
     L = []
     for i in array:
@@ -46,5 +54,5 @@ while True:
 
     message = "T {}(+{}) ,D {}(+{}), R {}, A {}, S {}".format(*data)
 
-    print (message)
+    print (label, message)
     quit()
