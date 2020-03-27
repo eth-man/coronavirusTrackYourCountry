@@ -1,7 +1,7 @@
 # Track Coronavirus in Your Country by Displaying Notifications Using Python with i3blocks
 
 
-## Libraries 
+## Libraries
 
 **bs4:** Python library for pulling data out of HTML and XML files.
 
@@ -10,7 +10,9 @@
 ## Installation
 
 ```
-
+copy the file to the desired location
+change country in variable
+add to i3 config
 ```
 
 For more inforamtions about the script you can check [this article](https://towardsdatascience.com/coronavirus-track-coronavirus-in-your-country-by-displaying-notification-c914b5652088).
