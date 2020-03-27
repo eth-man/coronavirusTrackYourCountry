@@ -1,13 +1,11 @@
-#For informations check : https://towardsdatascience.com/coronavirus-track-coronavirus-in-your-country-by-displaying-notification-c914b5652088
-
-from win10toast import ToastNotifier
+#!/usr/bin/env python3
+from optparse import OptionParser
 from bs4 import BeautifulSoup
 import requests
 import time
+import argparse
 
-country = "Tunisia"
-notification_duration = 10
-refresh_time = 10 #minutes
+country = "UK"
 data_check= []
 worldmetersLink = "https://www.worldometers.info/coronavirus/"
 
@@ -25,7 +23,7 @@ def data_cleanup(array):
 while True:
     try:
         html_page = requests.get(worldmetersLink)
-    except requests.exceptions.RequestException as e: 
+    except requests.exceptions.RequestException as e:
         print (e)
         continue
     bs = BeautifulSoup(html_page.content, 'html.parser')
@@ -42,15 +40,11 @@ while True:
             data = data + [search[start+i].get_text()]
         except:
             data = data + ["0"]
-    
-    data= data_cleanup(data)
-    message = "Total infected = {}, New Case = {}, Total Deaths = {}, New Deaths = {}, Recovred = {}, Active Case = {}, Serious Critical = {}".format(*data)
 
-    
-    if data_check != data:
-        data_check = data
-        toaster = ToastNotifier()
-        toaster.show_toast("Coronavirus {}".format(country) , message, duration = notification_duration , icon_path ="icon.ico")
-    else:
-        time.sleep(refresh_time*60)
-        continue
+    data= data_cleanup(data)
+
+
+    message = "T {}(+{}) ,D {}(+{}), R {}, A {}, S {}".format(*data)
+
+    print (message)
+    quit()
