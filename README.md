@@ -1,4 +1,4 @@
-# Track Coronavirus in Your Country by Displaying Notifications Using Python with i3blocks
+# Track coronavirus in your country by displaying states using Python in i3blocks
 
 
 ## Libraries
@@ -10,12 +10,10 @@
 ## Installation
 
 ```
-copy the file to the desired location
-change country in variable
+copy the py file to the desired location
+change country variable in script
 add to i3 config
 ```
-
-For more inforamtions about the script you can check [this article](https://towardsdatascience.com/coronavirus-track-coronavirus-in-your-country-by-displaying-notification-c914b5652088).
 
 
 
