@@ -14,9 +14,8 @@
 pacman -S python-beautifulsoup4
 pacman -S python-requests
 
-copy the py file to the desired location
-change country variable in script
-add to i3 config
+copy py file to the desired location
+add path and countries to config (see i3blocks.config example)
 ```
 
 
