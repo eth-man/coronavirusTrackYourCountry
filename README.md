@@ -1,5 +1,6 @@
 # Track coronavirus in your country by displaying states using Python in i3blocks
 
+![alt text](https://github.com/eth-man/coronavirusTrackYourCountry/blob/master/example.png)
 
 ## Libraries
 
