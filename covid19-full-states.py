@@ -22,6 +22,7 @@ def data_cleanup(array):
     for i in array:
         i = i.replace("+","")
         i = i.replace("-","")
+        i = i.replace("N/A","")
         i = i.replace(",",".")
         if i == "":
             i = "0"
@@ -43,7 +44,7 @@ while True:
             start = i
             break
     data = []
-    for i in range(1,8):
+    for i in range(1,9):
         try:
             data = data + [search[start+i].get_text()]
         except:
@@ -52,7 +53,7 @@ while True:
     data= data_cleanup(data)
 
 
-    message = "T {}(+{}) ,D {}(+{}), R {}, A {}, S {}".format(*data)
+    message = "T {}(+{}), D {}(+{}), R {}, A (+{}){}, S {}".format(*data)
 
     print (label, message)
     quit()
